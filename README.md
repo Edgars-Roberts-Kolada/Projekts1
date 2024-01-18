@@ -23,7 +23,7 @@ Pdf faila izmantošana varētu izraisīt problēmas tā atvēršanā, kura varē
 
 Beigās ieguvu programmu, kura izveido un atver pdf failu ar informāciju par visiem e-pastiem, kas atnākuši, kopšs pagājušas programmas darbināšanas reizes.
 
-Izveidoju .cmd failu, kurā ir comanda run ar šī python faila path. Šī cmd faila shortkatu ievietoju sava datora startup mapē.
+Izveidoju .cmd failu, kurā ir comanda python ar šī python faila path. Šī cmd faila shortkatu ievietoju sava datora startup mapē.
 
 Beigās esmu apmierināts ar izveidotu programmu un plānoju to izmantot. Vienīgais uztraukums ir par drošibu, jo galu galā man uz datora tagad būs fails ar mana e-pasta robot pieejas paroli teksta formātā (.py failā), bet nedomāju, ka šis ir tik traki, jo ja kādam būs brīva pieeja pie maniem failiem, tad gan jau būtu kaut kas cits kas mani vienalga iegāztu.
 
