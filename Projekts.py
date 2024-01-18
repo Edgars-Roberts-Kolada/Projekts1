@@ -5,7 +5,6 @@ from reportlab.lib.colors import crimson, black
 from reportlab.lib.units import cm
 from reportlab.pdfgen.canvas import Canvas
 import os
-word = ["href=", "href", "<a href="] #list of strings to search for in email body
 
 imap_url = 'imap.gmail.com'
 my_mail = imaplib.IMAP4_SSL(imap_url)
@@ -40,11 +39,11 @@ for i in list:
     pasti.append(temp)
     temp=[]
 
-print (pasti)
+
+
 
 if os.path.exists("Atgadinajums.pdf"):
   os.remove("Atgadinajums.pdf")
-
 
 if pasti:
     canvas = Canvas("Atgadinajums.pdf", pagesize=(40 * cm, 18 * cm))
