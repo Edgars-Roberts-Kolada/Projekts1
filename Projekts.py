@@ -7,7 +7,7 @@ from reportlab.pdfgen.canvas import Canvas
 import os
 
 
-# E-pata atversana
+# E-pasta atversana
 imap_url = 'imap.gmail.com'
 my_mail = imaplib.IMAP4_SSL(imap_url)
 my_mail.login("erk.testpasts@gmail.com", "nzvy jpdl mjcm gcjh") #Testesanas e-pasts, kuru es dzesisu, kad tiks izlikts vertejums. Savaa versijaa ir mana galvenaa e-pata adrese un parole.
@@ -33,7 +33,7 @@ for i in list:
     mail=data[0][1]
     msg = email.message_from_bytes(mail)
     Date=email.utils.parsedate_to_datetime(msg['Date']).replace(tzinfo=None)
-    if Lastrun > Date:  #Parbaude vai epasts jau bija pajajusajaa palaisanaa
+    if Lastrun > Date:  #Parbaude vai epasts jau bija pagajusajaa palaisanaa
         break
     temp.append(email.utils.parseaddr(msg['from'])[1])
     temp.append(msg['subject'])
@@ -58,8 +58,9 @@ if pasti:
     canvas.setFillColor(black)
     n=0
     for i in pasti:
-        canvas.drawString(2 * cm, (14-0.8*n )* cm, str(i[0]) + "  |  " + str(i[1]) + "  |  " + i[2].strftime("%d-%m-%Y (%H:%M:%S)"))
-        n=n+1
+        if n < 15: #Pdf nav vairs vietas un man vienalga būs jāiet e-pastaa visu paarbaudit, ja ir tik daudz.
+            canvas.drawString(2 * cm, (14-0.8*n )* cm, str(i[0]) + "  |  " + str(i[1]) + "  |  " + i[2].strftime("%d-%m-%Y (%H:%M:%S)"))
+            n=n+1
 
     canvas.save()
 
